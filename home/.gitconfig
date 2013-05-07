@@ -1,0 +1,14 @@
+[init]
+	templatedir = ~/.git-template
+[user]
+	name = Adam Mueller
+	email = adam@freerunningtechnologies.com
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+[color]
+	ui = true
+[branch]
+	autosetuprebase = always
