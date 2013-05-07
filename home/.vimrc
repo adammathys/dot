@@ -35,14 +35,17 @@ set bs=2														"allow backspace in insert mode
 syntax enable                       "enable syntax highlighting
 set ruler														"use the ruler thigy
 set showmatch												"blink matching parentheses
-set nobackup												"don't do the ~ backups
 set ignorecase											"do case insensitive searching
-set directory=.     							  "set directory for locatinf swap files
 set hls                             "use highlight search
 set wmh=0                           "minimum windows width for splits
 set exrc                            "enable per-directory .vimrc files
 set secure                          "disable unsafe commands in local .vimrc files
 set t_Co=256                        "256 color support
+
+set backupdir=~/.vim/backup
+set dir=~/.vim/swap
+set undodir=~/.vim/undo
+
 filetype plugin indent on
 
 colorscheme jellybeans
