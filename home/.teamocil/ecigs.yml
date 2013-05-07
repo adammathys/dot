@@ -1,0 +1,21 @@
+windows:
+  - name: 'Work'
+    root: '~/Documents/ecigs'
+    panes:
+      - cmd: 'gwS'
+  - name: 'Guard'
+    root: '~/Documents/ecigs'
+    panes:
+      - cmd: 'bundle exec guard'
+  - name: 'Server'
+    root: '~/Documents/ecigs'
+    panes:
+      - cmd: 'srails s -p 50040'
+  - name: 'Console'
+    root: '~/Documents/ecigs'
+    panes:
+      - cmd: 'srails c'
+  - name: 'Other'
+    root: '~/Documents/ecigs'
+    panes:
+      - cmd: 'g lg -10'

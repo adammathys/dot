@@ -1,0 +1,21 @@
+windows:
+  - name: 'Work'
+    root: '~/Documents/kidzworld'
+    panes:
+      - cmd: 'gwS'
+  - name: 'Guard'
+    root: '~/Documents/kidzworld'
+    panes:
+      - cmd: 'bundle exec guard'
+  - name: 'Server'
+    root: '~/Documents/kidzworld'
+    panes:
+      - cmd: 'srails s'
+  - name: 'Chat'
+    root: '~/Documents/kidzworld'
+    panes:
+      - cmd: 'bundle exec rackup faye.ru -s thin'
+  - name: 'Other'
+    root: '~/Documents/kidzworld'
+    panes:
+      - cmd: 'g lg -10'

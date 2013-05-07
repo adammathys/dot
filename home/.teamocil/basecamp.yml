@@ -1,0 +1,21 @@
+windows:
+  - name: 'Work'
+    root: '~/Documents/basecamp2'
+    panes:
+      - cmd: 'gwS'
+  - name: 'Guard'
+    root: '~/Documents/basecamp2'
+    panes:
+      - cmd: 'bundle exec guard'
+  - name: 'Server'
+    root: '~/Documents/basecamp2'
+    panes:
+      - cmd: 'srails s -p 50020'
+  - name: 'Console'
+    root: '~/Documents/basecamp2'
+    panes:
+      - cmd: 'srails c'
+  - name: 'Other'
+    root: '~/Documents/basecamp2'
+    panes:
+      - cmd: 'g lg -10'

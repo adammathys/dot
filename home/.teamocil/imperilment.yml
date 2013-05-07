@@ -1,0 +1,21 @@
+windows:
+  - name: 'Work'
+    root: '~/Documents/imperilment'
+    panes:
+      - cmd: 'gwS'
+  - name: 'Guard'
+    root: '~/Documents/imperilment'
+    panes:
+      - cmd: 'bundle exec guard'
+  - name: 'Server'
+    root: '~/Documents/imperilment'
+    panes:
+      - cmd: 'srails s -p 50090'
+  - name: 'Console'
+    root: '~/Documents/imperilment'
+    panes:
+      - cmd: 'srails c'
+  - name: 'Other'
+    root: '~/Documents/imperilment'
+    panes:
+      - cmd: 'g lg -10'

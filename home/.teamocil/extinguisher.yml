@@ -1,0 +1,21 @@
+windows:
+  - name: 'Work'
+    root: '~/Documents/extinguisher'
+    panes:
+      - cmd: 'gwS'
+  - name: 'Guard'
+    root: '~/Documents/extinguisher'
+    panes:
+      - cmd: 'bundle exec guard'
+  - name: 'Server'
+    root: '~/Documents/extinguisher'
+    panes:
+      - cmd: 'srails s -p 50010'
+  - name: 'Console'
+    root: '~/Documents/extinguisher'
+    panes:
+      - cmd: 'srails c'
+  - name: 'Other'
+    root: '~/Documents/extinguisher'
+    panes:
+      - cmd: 'g lg -10'

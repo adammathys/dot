@@ -1,0 +1,21 @@
+windows:
+  - name: 'Work'
+    root: '~/Documents/westhills-options'
+    panes:
+      - cmd: 'gwS'
+  - name: 'Guard'
+    root: '~/Documents/westhills-options'
+    panes:
+      - cmd: 'bundle exec guard'
+  - name: 'Server'
+    root: '~/Documents/westhills-options'
+    panes:
+      - cmd: 'srails s -p 50060'
+  - name: 'Console'
+    root: '~/Documents/westhills-options'
+    panes:
+      - cmd: 'srails c'
+  - name: 'Other'
+    root: '~/Documents/westhills-options'
+    panes:
+      - cmd: 'g lg -10'
