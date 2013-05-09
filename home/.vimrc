@@ -6,9 +6,15 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'nanotech/jellybeans.vim'
+
+Bundle 'skammer/vim-css-color'
 Bundle 'kchmck/vim-coffee-script'
+
 Bundle 'bitc/vim-bad-whitespace'
 Bundle 'scrooloose/nerdtree'
+
+Bundle 'Lokaltog/vim-easymotion'
 
 Bundle 'juvenn/mustache.vim'
 
