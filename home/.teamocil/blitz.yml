@@ -10,11 +10,11 @@ windows:
   - name: 'Server'
     root: '~/Documents/blitz'
     panes:
-      - cmd: 'srails s -p 50030'
+      - cmd: 'rails s -p 50030'
   - name: 'Console'
     root: '~/Documents/blitz'
     panes:
-      - cmd: 'srails c'
+      - cmd: 'bundle exec pry'
   - name: 'Other'
     root: '~/Documents/blitz'
     panes:

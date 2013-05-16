@@ -10,7 +10,7 @@ windows:
   - name: 'Server'
     root: '~/Documents/kidzworld'
     panes:
-      - cmd: 'srails s'
+      - cmd: 'rails s'
   - name: 'Chat'
     root: '~/Documents/kidzworld'
     panes:

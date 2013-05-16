@@ -10,11 +10,11 @@ windows:
   - name: 'Server'
     root: '~/Documents/basecamp2'
     panes:
-      - cmd: 'srails s -p 50020'
+      - cmd: 'rails s -p 50020'
   - name: 'Console'
     root: '~/Documents/basecamp2'
     panes:
-      - cmd: 'srails c'
+      - cmd: 'bundle exec pry'
   - name: 'Other'
     root: '~/Documents/basecamp2'
     panes:

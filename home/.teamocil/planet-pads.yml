@@ -10,11 +10,11 @@ windows:
   - name: 'Server'
     root: '~/Documents/planet-pads'
     panes:
-      - cmd: 'srails s -p 50100'
+      - cmd: 'rails s -p 50100'
   - name: 'Console'
     root: '~/Documents/planet-pads'
     panes:
-      - cmd: 'srails c'
+      - cmd: 'bundle exec pry'
   - name: 'Other'
     root: '~/Documents/planet-pads'
     panes:
