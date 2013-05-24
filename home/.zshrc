@@ -23,3 +23,5 @@ alias brake='noglob bundle exec rake' # execute the bundled rake gem
 alias rails="./script/rails"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+eval `direnv hook zsh`

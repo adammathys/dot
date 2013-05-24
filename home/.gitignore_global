@@ -2,3 +2,4 @@
 .rvmrc
 /db/dumps
 *.swp
+.envrc
