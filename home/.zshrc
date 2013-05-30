@@ -20,8 +20,6 @@ alias -g pry="pry -r ./config/environment"
 alias rake="noglob rake" # allows square brackts for rake task invocation
 alias brake='noglob bundle exec rake' # execute the bundled rake gem
 
-alias rails="./script/rails"
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 eval `direnv hook zsh`

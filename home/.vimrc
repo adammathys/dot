@@ -15,6 +15,8 @@ Bundle 'scrooloose/nerdtree'
 
 Bundle 'Lokaltog/vim-easymotion'
 
+Bundle 'mileszs/ack.vim'
+
 Bundle 'juvenn/mustache.vim'
 
 Bundle 'yaymukund/vim-rabl'
