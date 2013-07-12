@@ -1,0 +1,21 @@
+windows:
+  - name: 'Work'
+    root: '~/Documents/hats'
+    panes:
+      - cmd: 'gwS'
+  - name: 'Guard'
+    root: '~/Documents/hats'
+    panes:
+      - cmd: 'bundle exec guard'
+  - name: 'Server'
+    root: '~/Documents/hats'
+    panes:
+      - cmd: 'rails s -p 50130'
+  - name: 'Console'
+    root: '~/Documents/hats'
+    panes:
+      - cmd: 'bundle exec pry'
+  - name: 'Other'
+    root: '~/Documents/hats'
+    panes:
+      - cmd: 'g lg -10'

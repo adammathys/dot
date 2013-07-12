@@ -7,6 +7,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'bling/vim-airline'
 
 Bundle 'kchmck/vim-coffee-script'
 
@@ -16,6 +17,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-easymotion'
 
 Bundle 'mileszs/ack.vim'
+
+Bundle 'othree/html5.vim'
 
 Bundle 'juvenn/mustache.vim'
 
@@ -48,6 +51,8 @@ set wmh=0                           "minimum windows width for splits
 set exrc                            "enable per-directory .vimrc files
 set secure                          "disable unsafe commands in local .vimrc files
 set t_Co=256                        "256 color support
+set laststatus=2
+set encoding=utf-8
 
 set backupdir=~/.vim/backup
 set dir=~/.vim/swap
@@ -55,11 +60,21 @@ set undodir=~/.vim/undo
 
 filetype plugin indent on
 
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_fugitive_prefix = ' '
+let g:airline_readonly_symbol = ''
+let g:airline_linecolumn_prefix = ''
+let g:airline_theme='badwolf'
+
 colorscheme jellybeans
 highlight clear SignColumn
 
 autocmd BufNewFile,BufRead *.mobile.erb let b:eruby_subtype='html'
 autocmd BufNewFile,BufRead *.mobile.erb set filetype=eruby
+autocmd BufNewFile,BufRead .pryrc set filetype=ruby
 
 "This maps ctrl+h and ctrl+l to moving between :vsplit windows
 map <silent> <C-J> <C-W>k<C-W>_
@@ -74,6 +89,9 @@ map <silent> gC :Gcommit -a<CR>
 map <silent> gl :gitv<CR>
 map <silent> gs :Gstatus<CR>
 map <silent> ws :EraseBadWhitespace<CR>
+
+"Expression mappings.
+cabbr <expr> %% expand('%:p:h')
 
 "No arrow keys. :(
 inoremap  <Up>     <NOP>
