@@ -14,6 +14,7 @@ fi
 alias ack='ack-grep'
 alias l='ls -l'
 alias ll='ls -al'
+alias pgrep='ps aux | grep'
 
 alias -g pry="pry -r ./config/environment -r rails/console/app -r rails/console/helpers"
 

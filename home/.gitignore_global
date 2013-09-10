@@ -1,5 +1,10 @@
+# Ignore config files.
 .vimrc
-.rvmrc
-/db/dumps
-*.swp
 .envrc
+.rvmrc
+
+# Ignore vim swap files.
+*.swp
+
+# Ignore dotenv files.
+.env
