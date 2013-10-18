@@ -12,8 +12,8 @@ fi
 
 # Customize to your needs...
 alias ack='ack-grep'
-alias l='ls -l'
-alias ll='ls -al'
+alias l='ls -lh'
+alias ll='ls -alh'
 alias pgrep='ps aux | grep'
 
 alias -g pry="pry -r ./config/environment -r rails/console/app -r rails/console/helpers"
@@ -23,4 +23,4 @@ alias brake='noglob bundle exec rake' # execute the bundled rake gem
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-eval `direnv hook zsh`
+eval "$(direnv hook zsh)"
