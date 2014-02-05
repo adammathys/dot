@@ -1,0 +1,3 @@
+#!/bin/bash
+
+hooks/tmux.rb
