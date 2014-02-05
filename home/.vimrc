@@ -11,19 +11,18 @@ Bundle 'bling/vim-airline'
 
 Bundle 'kchmck/vim-coffee-script'
 
-Bundle 'bitc/vim-bad-whitespace'
+Bundle 'csexton/trailertrash.vim'
+
 Bundle 'scrooloose/nerdtree'
-
-Bundle 'Lokaltog/vim-easymotion'
-
-Bundle 'mileszs/ack.vim'
 
 Bundle 'othree/html5.vim'
 
 Bundle 'juvenn/mustache.vim'
 
 Bundle 'yaymukund/vim-rabl'
+
 Bundle 'int3/vim-extradite'
+Bundle 'sjl/splice.vim'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
@@ -43,16 +42,17 @@ set autoindent
 set smartindent											"use smart indenting
 set bs=2														"allow backspace in insert mode
 syntax enable                       "enable syntax highlighting
+set wmh=0                           "set min window height
 set ruler														"use the ruler thigy
 set showmatch												"blink matching parentheses
 set ignorecase											"do case insensitive searching
 set hls                             "use highlight search
-set wmh=0                           "minimum windows width for splits
 set exrc                            "enable per-directory .vimrc files
 set secure                          "disable unsafe commands in local .vimrc files
 set t_Co=256                        "256 color support
 set laststatus=2
 set encoding=utf-8
+set clipboard=unnamedplus
 
 set backupdir=~/.vim/backup
 set dir=~/.vim/swap
@@ -67,7 +67,7 @@ let g:airline_right_alt_sep = ''
 let g:airline_fugitive_prefix = ' '
 let g:airline_readonly_symbol = ''
 let g:airline_linecolumn_prefix = ''
-let g:airline_theme='badwolf'
+let g:airline_theme='jellybeans'
 
 colorscheme jellybeans
 highlight clear SignColumn
@@ -77,10 +77,11 @@ autocmd BufNewFile,BufRead *.mobile.erb set filetype=eruby
 autocmd BufNewFile,BufRead .pryrc set filetype=ruby
 
 "This maps ctrl+h and ctrl+l to moving between :vsplit windows
-map <silent> <C-J> <C-W>k<C-W>_
-map <silent> <C-K> <C-W>j<C-W>_
+map <silent> <C-J> <C-W>k
+map <silent> <C-K> <C-W>j
 map <silent> <C-H> <C-W>h
 map <silent> <C-L> <C-W>l
+map <silent> <C-M> <C-W>_
 map <silent> <C-N> :silent noh<CR>
 map <silent> <C-T> :NERDTree <CR>
 map <silent> gb :Gblame<CR>
@@ -88,7 +89,6 @@ map <silent> gc :Gcommit<CR>
 map <silent> gC :Gcommit -a<CR>
 map <silent> gl :gitv<CR>
 map <silent> gs :Gstatus<CR>
-map <silent> ws :EraseBadWhitespace<CR>
 
 "Expression mappings.
 cabbr <expr> %% expand('%:p:h')

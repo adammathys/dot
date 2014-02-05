@@ -3,8 +3,18 @@
 .envrc
 .rvmrc
 
+# Ignore silver searcher ignore file.
+.agignore
+
 # Ignore vim swap files.
 *.swp
 
 # Ignore dotenv files.
 .env
+
+# Ignore ruby-version files.
+.ruby-version
+
+# Ignore local bundles
+.bundle
+vendor/bundle

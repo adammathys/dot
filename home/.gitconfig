@@ -1,14 +1,23 @@
 [init]
-	templatedir = ~/.git-template
+  templatedir = ~/.git-template
 [user]
-	name = Adam Mueller
-	email = adam@freerunningtech.com
+  name = Adam Mueller
+  email = adam@freerunningtech.com
 [alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore_global
+  editor = vim
+  excludesfile = ~/.gitignore_global
 [color]
-	ui = true
+  ui = true
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
+[merge]
+  tool = splice
+[push]
+  default = simple
+[mergetool]
+  keepBackup = false
+[mergetool "splice"]
+  cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+  trustExitCode = true

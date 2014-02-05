@@ -15,15 +15,23 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-alias ack='ack-grep'
+alias ack='ag'
 alias l='ls -lh'
 alias ll='ls -alh'
+alias bi='bundle install --path vendor/bundle'
+alias be='bundle exec'
 alias pgrep='ps aux | grep'
+alias git='hub'
+compdef hub=git
 
-alias -g pry="pry -r ./config/environment -r rails/console/app -r rails/console/helpers"
+# As of nokogiri 1.6, it will compile its own version of libxml2 and libxslt.
+# While this is convenient, it is slower, and uses about 100MB for each
+# install. For a development machine (many gemsets, bundle install often) this
+# is a better default.
+export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 
-alias rake="noglob rake" # allows square brackts for rake task invocation
-alias brake='noglob bundle exec rake' # execute the bundled rake gem
+# Don't garbage collect as often. Sacrifice some ram.
+export RUBY_GC_MALLOC_LIMIT=80000000
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
