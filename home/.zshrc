@@ -33,6 +33,8 @@ export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 # Don't garbage collect as often. Sacrifice some ram.
 export RUBY_GC_MALLOC_LIMIT=80000000
 
+export TERM='screen-256color'
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 eval "$(direnv hook zsh)"

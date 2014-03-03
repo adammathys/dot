@@ -8,6 +8,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'bling/vim-airline'
+Bundle 'edkolev/tmuxline.vim'
 
 Bundle 'kchmck/vim-coffee-script'
 
@@ -60,14 +61,17 @@ set undodir=~/.vim/undo
 
 filetype plugin indent on
 
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 let g:airline_fugitive_prefix = ' '
 let g:airline_readonly_symbol = ''
 let g:airline_linecolumn_prefix = ''
 let g:airline_theme='jellybeans'
+
+let g:tmuxline_separators = { 'left' : '', 'left_alt': '', 'right' : '', 'right_alt' : '', 'space' : ' ' }
+let g:airline#extensions#tmuxline#enabled = 0
 
 colorscheme jellybeans
 highlight clear SignColumn
@@ -89,6 +93,8 @@ map <silent> gc :Gcommit<CR>
 map <silent> gC :Gcommit -a<CR>
 map <silent> gl :gitv<CR>
 map <silent> gs :Gstatus<CR>
+
+map <silent> <leader>t :Trim<CR>
 
 "Expression mappings.
 cabbr <expr> %% expand('%:p:h')
