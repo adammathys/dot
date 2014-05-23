@@ -9,18 +9,16 @@
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
+source /usr/local/share/bundler-exec/bundler-exec.sh
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 # Customize to your needs...
-alias ack='ag'
 alias l='ls -lh'
 alias ll='ls -alh'
-alias bi='bundle install --path vendor/bundle'
-alias be='bundle exec'
-alias pgrep='ps aux | grep'
 alias git='hub'
 compdef hub=git
 
@@ -34,7 +32,3 @@ export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 export RUBY_GC_MALLOC_LIMIT=80000000
 
 export TERM='screen-256color'
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-eval "$(direnv hook zsh)"

@@ -1,20 +1,13 @@
-# Ignore config files.
-.vimrc
-.envrc
-.rvmrc
-
 # Ignore silver searcher ignore file.
 .agignore
 
-# Ignore vim swap files.
-*.swp
-
 # Ignore dotenv files.
 .env
+.env.development
 
 # Ignore ruby-version files.
 .ruby-version
 
 # Ignore local bundles
-.bundle
+.bundle/config
 vendor/bundle

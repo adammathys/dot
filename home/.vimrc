@@ -1,4 +1,6 @@
-set nocompatible														"be Improved
+set nocompatible
+set encoding=utf-8
+
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
@@ -7,20 +9,18 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'nanotech/jellybeans.vim'
+
+Bundle 'camelcasemotion'
+
 Bundle 'bling/vim-airline'
 Bundle 'edkolev/tmuxline.vim'
 
+Bundle 'othree/html5.vim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'vim-ruby/vim-ruby'
 
 Bundle 'csexton/trailertrash.vim'
-
-Bundle 'scrooloose/nerdtree'
-
-Bundle 'othree/html5.vim'
-
-Bundle 'juvenn/mustache.vim'
-
-Bundle 'yaymukund/vim-rabl'
 
 Bundle 'int3/vim-extradite'
 Bundle 'sjl/splice.vim'
@@ -34,26 +34,31 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 
-set nocp
-set nu
-set ts=2														"tab stop 2
-set shiftwidth=2										"tab shift width 2
-set expandtab
-set autoindent
-set smartindent											"use smart indenting
-set bs=2														"allow backspace in insert mode
-syntax enable                       "enable syntax highlighting
-set wmh=0                           "set min window height
-set ruler														"use the ruler thigy
-set showmatch												"blink matching parentheses
-set ignorecase											"do case insensitive searching
-set hls                             "use highlight search
-set exrc                            "enable per-directory .vimrc files
-set secure                          "disable unsafe commands in local .vimrc files
-set t_Co=256                        "256 color support
+set number
+set ruler
 set laststatus=2
-set encoding=utf-8
+
+set expandtab
+set softtabstop=2
+set shiftwidth=2
+
+set autoindent
+set smartindent
+
+set backspace=2
+
+syntax enable
+
+set winminheight=0
+
+set showmatch
+
+set ignorecase
+set hlsearch
+
 set clipboard=unnamedplus
+
+set shell=zsh
 
 set backupdir=~/.vim/backup
 set dir=~/.vim/swap
@@ -61,24 +66,25 @@ set undodir=~/.vim/undo
 
 filetype plugin indent on
 
+colorscheme jellybeans
+
+"Airline config
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
-let g:airline_fugitive_prefix = ' '
-let g:airline_readonly_symbol = ''
-let g:airline_linecolumn_prefix = ''
-let g:airline_theme='jellybeans'
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+let g:airline_theme = 'jellybeans'
 
+"Tmuxline config
 let g:tmuxline_separators = { 'left' : '', 'left_alt': '', 'right' : '', 'right_alt' : '', 'space' : ' ' }
 let g:airline#extensions#tmuxline#enabled = 0
-
-colorscheme jellybeans
-highlight clear SignColumn
-
-autocmd BufNewFile,BufRead *.mobile.erb let b:eruby_subtype='html'
-autocmd BufNewFile,BufRead *.mobile.erb set filetype=eruby
-autocmd BufNewFile,BufRead .pryrc set filetype=ruby
 
 "This maps ctrl+h and ctrl+l to moving between :vsplit windows
 map <silent> <C-J> <C-W>k
@@ -86,18 +92,9 @@ map <silent> <C-K> <C-W>j
 map <silent> <C-H> <C-W>h
 map <silent> <C-L> <C-W>l
 map <silent> <C-M> <C-W>_
-map <silent> <C-N> :silent noh<CR>
-map <silent> <C-T> :NERDTree <CR>
-map <silent> gb :Gblame<CR>
-map <silent> gc :Gcommit<CR>
-map <silent> gC :Gcommit -a<CR>
-map <silent> gl :gitv<CR>
-map <silent> gs :Gstatus<CR>
 
+map <silent> <leader>n :silent noh<CR>
 map <silent> <leader>t :Trim<CR>
-
-"Expression mappings.
-cabbr <expr> %% expand('%:p:h')
 
 "No arrow keys. :(
 inoremap  <Up>     <NOP>

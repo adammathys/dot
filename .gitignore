@@ -1,3 +1,4 @@
+home/.vim/.netrwhist
 home/.vim/swap/*
 home/.vim/bundle/*
 !home/.vim/bundle/vundle
