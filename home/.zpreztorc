@@ -14,7 +14,8 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt'
+  'prompt' \
+  'git'
 
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
