@@ -15,10 +15,14 @@ Bundle 'camelcasemotion'
 Bundle 'bling/vim-airline'
 Bundle 'edkolev/tmuxline.vim'
 
+Bundle 'christoomey/vim-tmux-navigator'
+
 Bundle 'othree/html5.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'vim-ruby/vim-ruby'
+
+Bundle 'ap/vim-css-color'
 
 Bundle 'csexton/trailertrash.vim'
 
@@ -33,6 +37,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-dispatch'
 
 set number
 set ruler
@@ -86,15 +91,13 @@ let g:airline_theme = 'jellybeans'
 let g:tmuxline_separators = { 'left' : '', 'left_alt': '', 'right' : '', 'right_alt' : '', 'space' : ' ' }
 let g:airline#extensions#tmuxline#enabled = 0
 
-"This maps ctrl+h and ctrl+l to moving between :vsplit windows
-map <silent> <C-J> <C-W>k
-map <silent> <C-K> <C-W>j
-map <silent> <C-H> <C-W>h
-map <silent> <C-L> <C-W>l
 map <silent> <C-M> <C-W>_
 
 map <silent> <leader>n :silent noh<CR>
 map <silent> <leader>t :Trim<CR>
+
+map <leader>r :Dispatch<CR>
+map <leader>s :Start<CR>
 
 "No arrow keys. :(
 inoremap  <Up>     <NOP>
