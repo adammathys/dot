@@ -29,6 +29,8 @@ Bundle 'csexton/trailertrash.vim'
 Bundle 'int3/vim-extradite'
 Bundle 'sjl/splice.vim'
 
+Bundle 'thoughtbot/vim-rspec'
+
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-repeat'
@@ -38,6 +40,7 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-projectionist'
 
 set number
 set ruler
@@ -69,9 +72,11 @@ set backupdir=~/.vim/backup
 set dir=~/.vim/swap
 set undodir=~/.vim/undo
 
-filetype plugin indent on
+set shell=/usr/bin/zsh
 
 colorscheme jellybeans
+
+filetype plugin indent on
 
 "Airline config
 if !exists('g:airline_symbols')
@@ -91,13 +96,20 @@ let g:airline_theme = 'jellybeans'
 let g:tmuxline_separators = { 'left' : '', 'left_alt': '', 'right' : '', 'right_alt' : '', 'space' : ' ' }
 let g:airline#extensions#tmuxline#enabled = 0
 
+"RSpec + Dispatch!
+let g:rspec_command = 'Dispatch rspec {spec}'
+
 map <silent> <C-M> <C-W>_
 
 map <silent> <leader>n :silent noh<CR>
 map <silent> <leader>t :Trim<CR>
 
-map <leader>r :Dispatch<CR>
-map <leader>s :Start<CR>
+map <silent> <leader>cc :ccl<CR>
+
+map <Leader>r :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :Dispatch rspec-fast<CR>
 
 "No arrow keys. :(
 inoremap  <Up>     <NOP>
@@ -108,3 +120,4 @@ noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
+

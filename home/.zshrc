@@ -19,11 +19,8 @@ compdef hub=git
 # is a better default.
 export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 
-# Don't garbage collect as often. Sacrifice some ram.
+# Tweaks to Ruby GC.
 export RUBY_GC_MALLOC_LIMIT=80000000
 
 # 256 colors!
 export TERM='screen-256color'
-
-# No need to type `bundle exec` infront of everything
-source /usr/local/share/bundler-exec/bundler-exec.sh

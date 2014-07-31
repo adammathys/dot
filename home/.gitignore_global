@@ -10,4 +10,4 @@
 
 # Ignore local bundles
 .bundle/config
-vendor/bundle
+**/vendor/bundle
