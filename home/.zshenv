@@ -1,3 +1,6 @@
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
 alias rspec-fast='rspec -O ~/.rspec-fast'
 
 if [[ "$OSTYPE" == darwin* ]]; then
