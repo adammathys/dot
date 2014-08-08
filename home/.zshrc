@@ -1,3 +1,6 @@
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -20,3 +23,6 @@ export RUBY_GC_MALLOC_LIMIT=80000000
 
 # 256 colors!
 export TERM='screen-256color'
+
+# No need to type `bundle exec` infront of everything
+source /usr/local/share/bundler-exec/bundler-exec.sh

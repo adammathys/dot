@@ -1,12 +1,5 @@
 require 'rubygems'
 
-begin
-  require 'hirb'
-  Hirb::View.enable
-rescue LoadError => e
-  warn "=> Unable to load hirb."
-end
-
 def tables
   ActiveRecord::Base.connection.tables
 end
@@ -22,3 +15,4 @@ begin
 rescue LoadError => e
   warn "=> Unable to load pry."
 end
+
