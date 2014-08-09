@@ -4,13 +4,15 @@ set encoding=utf-8
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 Bundle 'gmarik/vundle'
 
 Bundle 'nanotech/jellybeans.vim'
 
 Bundle 'camelcasemotion'
+
+Bundle 'justinmk/vim-sneak'
 
 Bundle 'bling/vim-airline'
 Bundle 'edkolev/tmuxline.vim'
@@ -26,7 +28,6 @@ Bundle 'ap/vim-css-color'
 
 Bundle 'csexton/trailertrash.vim'
 
-Bundle 'int3/vim-extradite'
 Bundle 'sjl/splice.vim'
 
 Bundle 'thoughtbot/vim-rspec'
@@ -41,6 +42,9 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-projectionist'
+
+call vundle#end()
+filetype plugin indent on
 
 set number
 set ruler
@@ -98,6 +102,9 @@ let g:airline#extensions#tmuxline#enabled = 0
 
 "RSpec + Dispatch!
 let g:rspec_command = 'Dispatch rspec {spec}'
+
+"Sneaky sneak
+let g:sneak#streak = 1
 
 map <silent> <C-M> <C-W>_
 
