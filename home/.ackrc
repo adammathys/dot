@@ -1,4 +1,0 @@
---type-add=css=.scss
---type-add=js=.coffee
---type-set=plaintext=.md,.txt
---ignore-dir=coverage
