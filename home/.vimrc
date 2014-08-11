@@ -40,8 +40,8 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-projectionist'
+
+Bundle 'adammathys/vim-dispatch'
 
 call vundle#end()
 filetype plugin indent on
@@ -112,6 +112,8 @@ map <silent> <leader>n :silent noh<CR>
 map <silent> <leader>t :Trim<CR>
 
 map <silent> <leader>cc :ccl<CR>
+map <silent> ]q :cn<CR>
+map <silent> [q :cp<CR>
 
 map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
