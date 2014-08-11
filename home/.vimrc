@@ -6,42 +6,44 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'nanotech/jellybeans.vim'
+Plugin 'nanotech/jellybeans.vim'
 
-Bundle 'camelcasemotion'
+Plugin 'camelcasemotion'
 
-Bundle 'justinmk/vim-sneak'
+Plugin 'justinmk/vim-sneak'
 
-Bundle 'bling/vim-airline'
-Bundle 'edkolev/tmuxline.vim'
+Plugin 'bling/vim-airline'
+Plugin 'edkolev/tmuxline.vim'
 
-Bundle 'christoomey/vim-tmux-navigator'
+Plugin 'rking/ag.vim'
 
-Bundle 'othree/html5.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'christoomey/vim-tmux-navigator'
 
-Bundle 'ap/vim-css-color'
+Plugin 'othree/html5.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'vim-ruby/vim-ruby'
 
-Bundle 'csexton/trailertrash.vim'
+Plugin 'ap/vim-css-color'
 
-Bundle 'sjl/splice.vim'
+Plugin 'csexton/trailertrash.vim'
 
-Bundle 'thoughtbot/vim-rspec'
+Plugin 'sjl/splice.vim'
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-markdown'
+Plugin 'thoughtbot/vim-rspec'
 
-Bundle 'adammathys/vim-dispatch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-markdown'
+
+Plugin 'adammathys/vim-dispatch'
 
 call vundle#end()
 filetype plugin indent on
