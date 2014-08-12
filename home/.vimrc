@@ -15,7 +15,6 @@ Plugin 'camelcasemotion'
 Plugin 'justinmk/vim-sneak'
 
 Plugin 'bling/vim-airline'
-Plugin 'edkolev/tmuxline.vim'
 
 Plugin 'rking/ag.vim'
 
@@ -72,13 +71,13 @@ set hlsearch
 
 set clipboard=unnamedplus
 
+set t_Co=256
+
 set shell=zsh
 
 set backupdir=~/.vim/backup
 set dir=~/.vim/swap
 set undodir=~/.vim/undo
-
-set shell=/usr/bin/zsh
 
 colorscheme jellybeans
 
@@ -101,12 +100,11 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 let g:airline_theme = 'jellybeans'
 
-"Tmuxline config
-let g:tmuxline_separators = { 'left' : '', 'left_alt': '', 'right' : '', 'right_alt' : '', 'space' : ' ' }
-let g:airline#extensions#tmuxline#enabled = 0
-
 "RSpec + Dispatch!
 let g:rspec_command = 'Dispatch rspec {spec}'
+
+"Dispatch compilers
+let g:dispatch_compilers = { 'rspec-fast' : 'rspec' }
 
 "Sneaky sneak
 let g:sneak#streak = 1
@@ -114,7 +112,7 @@ let g:sneak#streak = 1
 map <silent> <C-M> <C-W>_
 
 map <silent> <leader>n :silent noh<CR>
-map <silent> <leader>t :Trim<CR>
+map <silent> <leader>t :TrailerTrim<CR>
 
 map <silent> <leader>cc :ccl<CR>
 map <silent> ]q :cn<CR>
@@ -134,4 +132,3 @@ noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
-
