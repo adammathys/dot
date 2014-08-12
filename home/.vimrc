@@ -8,6 +8,7 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle'
 
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'nanotech/jellybeans.vim'
 
 Plugin 'camelcasemotion'
@@ -60,8 +61,6 @@ set smartindent
 
 set backspace=2
 
-syntax enable
-
 set winminheight=0
 
 set showmatch
@@ -79,7 +78,9 @@ set backupdir=~/.vim/backup
 set dir=~/.vim/swap
 set undodir=~/.vim/undo
 
-colorscheme jellybeans
+syntax enable
+set background=dark
+colorscheme solarized
 
 filetype plugin indent on
 
@@ -98,7 +99,7 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.whitespace = 'Ξ'
 
-let g:airline_theme = 'jellybeans'
+let g:airline_theme = 'solarized'
 
 "RSpec + Dispatch!
 let g:rspec_command = 'Dispatch rspec {spec}'
