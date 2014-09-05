@@ -1,11 +1,7 @@
-# Set case-sensitivity for completion, history lookup, etc.
 zstyle ':prezto:*:*' case-sensitive 'no'
 
-# Color output (auto set to 'no' on dumb terminals).
 zstyle ':prezto:*:*' color 'yes'
 
-# Set the Prezto modules to load (browse modules).
-# The order matters.
 zstyle ':prezto:load' pmodule \
   'environment' \
   'editor' \
@@ -17,27 +13,8 @@ zstyle ':prezto:load' pmodule \
   'prompt' \
   'git'
 
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^p" history-beginning-search-backward-end
-bindkey "^n" history-beginning-search-forward-end
-
-#
-# Editor
-#
-
-# Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':prezto:module:editor' keymap 'vi'
 
-# Auto convert .... to ../..
 zstyle ':prezto:module:editor' dot-expansion 'yes'
 
-#
-# Prompt
-#
-
-# Set the prompt theme to load.
-# Setting it to 'random' loads a random theme.
-# Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'sorin'
