@@ -65,9 +65,6 @@ set winminheight=0
 
 set showmatch
 
-set ignorecase
-set hlsearch
-
 set clipboard=unnamedplus
 
 set t_Co=256
@@ -77,6 +74,13 @@ set shell=zsh
 set backupdir=~/.vim/backup
 set dir=~/.vim/swap
 set undodir=~/.vim/undo
+
+set ignorecase
+set hlsearch
+
+set cmdheight=1
+set wildmode=list:longest,list:full
+set wildmenu
 
 syntax enable
 set background=dark
@@ -110,6 +114,9 @@ let g:dispatch_compilers = { 'rspec-fast' : 'rspec' }
 "Sneaky sneak
 let g:sneak#streak = 1
 
+"TrailerTrash highlight
+hi UnwantedTrailerTrash guibg=red ctermbg=red
+
 map <silent> <C-M> <C-W>_
 
 map <silent> <leader>n :silent noh<CR>
@@ -118,6 +125,9 @@ map <silent> <leader>t :TrailerTrim<CR>
 map <silent> <leader>cc :ccl<CR>
 map <silent> ]q :cn<CR>
 map <silent> [q :cp<CR>
+
+"Convert Ruby 1.8 hashes to 1.9 syntax
+noremap <leader>rr :s/:\(\w\+\)\s*=>/\1:/g<CR>
 
 map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>

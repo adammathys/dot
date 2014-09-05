@@ -1,6 +1,12 @@
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
+# Add my completions to fpath
+fpath=('/home/adam/.zsh/completions' $fpath)
+
+# Find using silver searcher
+f(){ ag --nocolor -l -g "$1" "${2:-.}" }
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -9,8 +15,7 @@ fi
 # Aliases
 alias l='ls -lh'
 alias ll='ls -alh'
-alias git='hub'
-compdef hub=git
+alias git=hub
 
 # As of nokogiri 1.6, it will compile its own version of libxml2 and libxslt.
 # While this is convenient, it is slower, and uses about 100MB for each
