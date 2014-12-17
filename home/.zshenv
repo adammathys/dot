@@ -2,6 +2,7 @@ source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
 alias rspec-fast='rspec -O ~/.rspec-fast'
+alias rspec-slow='rspec -O ~/.rspec-slow'
 
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'

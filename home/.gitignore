@@ -11,3 +11,6 @@
 # Ignore local bundles
 .bundle/config
 **/vendor/bundle
+
+# Ignore local omc config
+.omcrc

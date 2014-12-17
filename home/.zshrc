@@ -5,7 +5,7 @@ source /usr/local/share/chruby/auto.sh
 fpath=('/home/adam/.zsh/completions' $fpath)
 
 # Find using silver searcher
-f(){ ag --nocolor -l -g "$1" "${2:-.}" }
+f(){ ag --nocolor -g "$1" "${2:-.}" }
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then

@@ -31,6 +31,8 @@ Plugin 'ap/vim-css-color'
 Plugin 'csexton/trailertrash.vim'
 
 Plugin 'sjl/splice.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'sjl/vitality.vim'
 
 Plugin 'thoughtbot/vim-rspec'
 
@@ -76,6 +78,7 @@ set dir=~/.vim/swap
 set undodir=~/.vim/undo
 
 set ignorecase
+set smartcase
 set hlsearch
 
 set cmdheight=1
@@ -114,8 +117,17 @@ let g:dispatch_compilers = { 'rspec-fast' : 'rspec' }
 "Sneaky sneak
 let g:sneak#streak = 1
 
+"Splice
+let g:splice_initial_diff_grid = 1
+let g:splice_initial_scrollbind_grid = 1
+
 "TrailerTrash highlight
 hi UnwantedTrailerTrash guibg=red ctermbg=red
+
+" Use space for leader
+map <space> <leader>
+
+map <silent> <leader>g :GundoToggle<CR>
 
 map <silent> <C-M> <C-W>_
 
@@ -125,6 +137,9 @@ map <silent> <leader>t :TrailerTrim<CR>
 map <silent> <leader>cc :ccl<CR>
 map <silent> ]q :cn<CR>
 map <silent> [q :cp<CR>
+
+map <silent> <leader>w :w<CR>
+map <silent> <leader>q :q<CR>
 
 "Convert Ruby 1.8 hashes to 1.9 syntax
 noremap <leader>rr :s/:\(\w\+\)\s*=>/\1:/g<CR>
