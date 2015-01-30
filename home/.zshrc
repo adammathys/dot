@@ -29,5 +29,8 @@ export RUBY_GC_MALLOC_LIMIT=80000000
 # 256 colors!
 export TERM='screen-256color'
 
+# Show time if something takes longer than 10s
+export REPORTTIME=10
+
 # No need to type `bundle exec` infront of everything
 source /usr/local/share/bundler-exec/bundler-exec.sh
