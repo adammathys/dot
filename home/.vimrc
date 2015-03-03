@@ -9,7 +9,6 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'nanotech/jellybeans.vim'
 
 Plugin 'camelcasemotion'
 
@@ -26,13 +25,15 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'vim-ruby/vim-ruby'
 
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
+
 Plugin 'ap/vim-css-color'
 
 Plugin 'csexton/trailertrash.vim'
 
 Plugin 'sjl/splice.vim'
 Plugin 'sjl/gundo.vim'
-Plugin 'sjl/vitality.vim'
 
 Plugin 'thoughtbot/vim-rspec'
 

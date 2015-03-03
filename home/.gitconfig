@@ -28,6 +28,8 @@
   trustExitCode = true
 [push]
   default = simple
+[rebase]
+  autosquash = true
 [user]
   name = Adam Mueller
   email = adam@freerunningtech.com
