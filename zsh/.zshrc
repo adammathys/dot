@@ -1,6 +1,9 @@
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
+# Add my completions to fpath
+fpath=('/home/adam/.zsh/completions' $fpath)
+
 autoload -U compinit
 compinit -u
 
