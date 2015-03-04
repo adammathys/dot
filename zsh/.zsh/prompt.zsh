@@ -3,7 +3,7 @@ function parse_git_dirty {
   [[ "$(command git rev-parse --is-inside-work-tree 2>/dev/null)" == "true" ]] || return
   # Check to see if it's dirty!
   command test -n "$(git status --porcelain --ignore-submodules ${umode})"
-  (($? == 0)) && echo "%B%F{red}!%f%b"
+  (($? == 0)) && echo "%F{red}%f"
 }
 
 function parse_git_branch {
@@ -12,11 +12,11 @@ function parse_git_branch {
 
 function git_info {
   [[ "$(parse_git_branch)" != "" ]] || return
-  echo "%F{blue}git%f:%F{60}$(parse_git_branch)%f "
+  echo "%F{blue}git%f:%F{cyan}$(parse_git_branch)%f "
 }
 
-local current_dir="%F{cyan}%~%f "
-local user_prompt="%B%F{66}❯❯%f%b "
+local current_dir="%F{gray}%~%f "
+local user_prompt="%B%F{green}%#%f%b "
 
 PROMPT='${current_dir}$(git_info)${user_prompt}'
 
