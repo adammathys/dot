@@ -1,22 +1,25 @@
-autoload -U colors && colors
+function parse_git_dirty {
+  # Are we in a repo?
+  [[ "$(command git rev-parse --is-inside-work-tree 2>/dev/null)" == "true" ]] || return
+  # Check to see if it's dirty!
+  [[ "$PURE_GIT_UNTRACKED_DIRTY" == 0 ]] && local umode="-uno" || local umode="-unormal"
+
+  command test -n "$(git status --porcelain --ignore-submodules ${umode})"
+  (($? == 0)) && print -Pn "%B%F{red}!%f%b"
+}
+
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
+function git_info {
+  [[ "$(parse_git_branch)" != "" ]] || return
+  print -Pn "%F{blue}git:%f$(parse_git_branch) "
+}
+
+local current_dir="%F{cyan}%~%f "
+local user_prompt="%B%F{magenta}❯❯%f%b "
+
+PROMPT='${current_dir}$(git_info)${user_prompt}'
 
 setopt promptsubst
-
-function parse_git_dirty {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "!"
-}
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\/\1%s$(parse_git_dirty)/"
-}
-
-local suspended_jobs='%{$fg_bold[green]%}%(1j.[%j].)%{$reset_color%}'
-local user_host='%{$fg_bold[green]%}%n%{$reset_color$fg[magenta]%}@%m%{$reset_color%}'
-local ruby_version='%{$fg[white]%}$(chruby | grep "*" | cut -d" " -f3)%{$reset_color%}'
-local root_prompt='%{$fg[red]%}#'
-local user_prompt='%{$fg[magenta]%}$'
-local current_dir='%{$fg_bold[magenta]%}:%~%{$reset_color%}'
-local git_current_branch='%{$fg[blue]%}$(parse_git_branch)%{$reset_color%}'
-
-export PROMPT="${user_host}${current_dir}${git_current_branch}${suspended_jobs}%(!.${root_prompt}.${user_prompt}) %{$reset_color%}"
-
-export RPROMPT="${ruby_version}"
