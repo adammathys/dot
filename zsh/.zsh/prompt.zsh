@@ -17,7 +17,14 @@ function git_info {
 
 local current_dir="%F{gray}%~%f "
 local user_prompt="%B%F{green}%#%f%b "
-
 PROMPT='${current_dir}$(git_info)${user_prompt}'
+
+function zle-line-init zle-keymap-select {
+  local vim_prompt="%K{cyan}%F{white}%B NORMAL %b%f%k"
+  RPROMPT="${${KEYMAP/vicmd/${vim_prompt}}/(main|viins)/}"
+  zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 setopt promptsubst
