@@ -11,8 +11,8 @@ compinit -u
 f(){ ag --nocolor -g "$1" "${2:-.}" }
 
 # Aliases
-alias l='ls -lh'
-alias ll='ls -alh'
+alias l='ls -lh --color --group-directories-first'
+alias ll='l -a'
 alias git=hub
 
 # Export ALL of the things
