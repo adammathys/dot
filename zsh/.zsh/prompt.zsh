@@ -7,7 +7,7 @@ zstyle ':vcs_info:*' stagedstr "%F{green}%f"
 zstyle ':vcs_info:*' unstagedstr "%F{red}%f"
 precmd() { vcs_info }
 
-local current_dir="%F{gray}%~%f "
+local current_dir="%F{yellow}%~%f "
 local user_prompt="%B%F{green}%#%f%b "
 PROMPT='${current_dir}${vcs_info_msg_0_}${user_prompt}'
 
