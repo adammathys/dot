@@ -1,11 +1,12 @@
-home/.vim/.netrwhist
-home/.vim/swap/*
-home/.vim/bundle/*
-!home/.vim/bundle/vundle
+vim/.vim/.netrwhist
+vim/.vim/swap/*
+vim/.vim/bundle/*
+!vim/.vim/swap/.gitkeep
+!vim/.vim/bundle/Vundle.vim
 
-home/.mpd/*
-!home/.mpd/mpd.conf
+mpd/.mpd/*
+!mpd/.mpd/mpd.conf
 
-home/.mpdcron/mpdcron.pid
+mpd/.mpdcron/mpdcron.pid
 
-home/.ncmpcpp/error.log
+mpd/.ncmpcpp/error.log
