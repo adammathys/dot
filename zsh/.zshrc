@@ -3,7 +3,6 @@ source /usr/local/share/chruby/auto.sh
 
 # Add my completions to fpath
 fpath=('/home/adam/.zsh/completions' $fpath)
-
 # Completions
 autoload -U compinit
 compinit -u
@@ -13,6 +12,12 @@ bindkey -v
 
 # Find using silver searcher
 f(){ ag --nocolor -g "$1" "${2:-.}" }
+
+# Refresh tmux after timer commands.
+hcl() {
+  =hcl "$@"
+  tmux refresh-client -S
+}
 
 # Aliases
 alias l='ls -lh --color --group-directories-first'

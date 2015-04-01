@@ -24,6 +24,7 @@ setw -g window-status-activity-fg "colour14"
 setw -g window-status-separator ""
 setw -g window-status-bg "colour0"
 set -g status-left "#[fg=colour15,bg=colour14,bold] #S #[fg=colour14,bg=colour0,nobold,nounderscore,noitalics]"
-set -g status-right "#[fg=colour11,bg=colour0,nobold,nounderscore,noitalics]#[fg=colour7,bg=colour11] %Y-%m-%d  %H:%M #[fg=colour14,bg=colour11,nobold,nounderscore,noitalics]#[fg=colour15,bg=colour14] #h "
+set -g status-right "#[fg=colour15,bg=colour9,bold]#(hcl_status)#[fg=colour11,bg=colour0,nobold,nounderscore,noitalics]#[fg=colour7,bg=colour11] %Y-%m-%d  %H:%M #[fg=colour14,bg=colour11,nobold,nounderscore,noitalics]#[fg=colour15,bg=colour14] #h "
+set -g status-interval 30
 setw -g window-status-format "#[fg=colour10,bg=colour0] #W "
 setw -g window-status-current-format "#[fg=colour7,bg=colour11] #W #[fg=colour11,bg=colour0,nobold,nounderscore,noitalics]"

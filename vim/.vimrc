@@ -35,6 +35,9 @@ Plugin 'csexton/trailertrash.vim'
 Plugin 'sjl/splice.vim'
 Plugin 'sjl/gundo.vim'
 
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+
 Plugin 'thoughtbot/vim-rspec'
 
 Plugin 'tpope/vim-fugitive'
@@ -108,6 +111,12 @@ let g:airline_symbols.linenr = ''
 let g:airline_symbols.whitespace = 'Ξ'
 
 let g:airline_theme = 'solarized'
+
+"Gist
+let g:gist_detect_filetype = 1
+let g:gist_post_private = 1
+let g:gist_show_privates = 1
+let g:gist_open_browser_after_post = 1
 
 "RSpec + Dispatch!
 let g:rspec_command = 'Dispatch rspec {spec}'
