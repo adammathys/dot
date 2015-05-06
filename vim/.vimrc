@@ -24,6 +24,7 @@ Plugin 'othree/html5.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'noprompt/vim-yardoc'
 
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
@@ -92,7 +93,7 @@ set wildmenu
 
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme adamized
 
 filetype plugin indent on
 
