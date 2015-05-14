@@ -6,6 +6,7 @@ fpath=('/home/adam/.zsh/completions' $fpath)
 # Completions
 autoload -U compinit
 compinit -u
+compctl -g '~/.teamocil/*(:t:r)' teamocil
 
 # Vim keybindings!
 bindkey -v
