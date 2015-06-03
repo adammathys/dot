@@ -8,27 +8,18 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'altercation/vim-colors-solarized'
-
 Plugin 'camelcasemotion'
-
-Plugin 'justinmk/vim-sneak'
-
-Plugin 'bling/vim-airline'
 
 Plugin 'rking/ag.vim'
 
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'othree/html5.vim'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'noprompt/vim-yardoc'
-
-Plugin 'mxw/vim-jsx'
-Plugin 'pangloss/vim-javascript'
-
 Plugin 'ap/vim-css-color'
 
 Plugin 'csexton/trailertrash.vim'
@@ -39,63 +30,54 @@ Plugin 'sjl/gundo.vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 
-Plugin 'thoughtbot/vim-rspec'
-
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
 
+Plugin 'thoughtbot/vim-rspec'
 Plugin 'adammathys/vim-dispatch'
 
 call vundle#end()
 filetype plugin indent on
 
-set number
-set ruler
-set laststatus=2
+set number                " Show numbers.
+set ruler                 " Show line and column number of cursor position.
+set laststatus=2          " Always show the status line.
+set winminheight=0        " Allow windwos to have 0 height.
+set showmatch             " Show matching brackets.
 
-set expandtab
-set softtabstop=2
-set shiftwidth=2
+set expandtab             " Use spaces instead of tabs.
+set softtabstop=2         " Tabs are two spaces.
+set shiftwidth=2          " Auto-indent two spaces.
+set backspace=2           " Backspace over indent, end of line and start of insert.
 
-set autoindent
-set smartindent
+set autoindent            " Yay for auto-indent!
+set smartindent           " Indent smartly.
 
-set backspace=2
+set clipboard=unnamedplus " Use '+' clipboard.
 
-set winminheight=0
+set t_Co=256              " More colors!
 
-set showmatch
+set shell=zsh             " Use zsh for `:!` commands.
 
-set clipboard=unnamedplus
+set nobackup              " No backup files.
+set noswapfile            " No swap files.
+set undodir=~/.vim/undo   " Store undo somewhere sensible.
 
-set t_Co=256
+set ignorecase            " Case-insensitive search.
+set smartcase             " Just kidding, do case-sensitive sometimes.
+set hlsearch              " Highlight search matches.
 
-set shell=zsh
-
-set backupdir=~/.vim/backup
-set dir=~/.vim/swap
-set undodir=~/.vim/undo
-
-set ignorecase
-set smartcase
-set hlsearch
-
-set cmdheight=1
+set cmdheight=1           " Only use one line for the command-line.
 set wildmode=list:longest,list:full
-set wildmenu
+set wildmenu              " Tab completion in command-line.
 
-syntax enable
-set background=dark
-colorscheme adamized
-
-filetype plugin indent on
+syntax enable             " Who doesn't want syntax highlighting?
+set background=dark       " Love me the dark background.
+colorscheme adamized      " Custom solarized!
 
 "Airline config
 if !exists('g:airline_symbols')
@@ -125,9 +107,6 @@ let g:rspec_command = 'Dispatch rspec {spec}'
 
 "Dispatch compilers
 let g:dispatch_compilers = { 'rspec-fast' : 'rspec' }
-
-"Sneaky sneak
-let g:sneak#streak = 1
 
 "Splice
 let g:splice_initial_diff_grid = 1
@@ -160,13 +139,3 @@ map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :Dispatch rspec-fast<CR>
-
-"No arrow keys. :(
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>

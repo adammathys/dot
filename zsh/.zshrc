@@ -20,10 +20,14 @@ hcl() {
   tmux refresh-client -S
 }
 
+# Open Bonobos VPN in background.
+bonobos-vpn() { sudo openvpn --config ~/.vpn/client.ovpn --daemon }
+
 # Aliases
 alias l='ls -lh --color --group-directories-first'
 alias ll='l -a'
 alias git=hub
+
 
 # Export ALL of the things
 HISTSIZE=100000
