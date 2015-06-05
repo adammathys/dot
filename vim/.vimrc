@@ -10,8 +10,6 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'camelcasemotion'
 
-Plugin 'rking/ag.vim'
-
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -125,7 +123,7 @@ map <silent> <C-M> <C-W>_
 map <silent> <leader>n :silent noh<CR>
 map <silent> <leader>t :TrailerTrim<CR>
 
-map <silent> <leader>cc :ccl<CR>
+map <silent> <leader>c :ccl<CR>
 map <silent> ]q :cn<CR>
 map <silent> [q :cp<CR>
 
@@ -133,7 +131,7 @@ map <silent> <leader>w :w<CR>
 map <silent> <leader>q :q<CR>
 
 "Convert Ruby 1.8 hashes to 1.9 syntax
-noremap <leader>rr :s/:\(\w\+\)\s*=>/\1:/g<CR>
+noremap <leader>h :s/:\(\w\+\)\s*=>/\1:/g<CR>
 
 map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
