@@ -14,9 +14,3 @@
 
 # Ignore local omc config
 .omcrc
-
-# Ignore aws credentials file.
-aws.yml
-
-# Custom Profile
-Procfile.custom
