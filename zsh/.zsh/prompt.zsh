@@ -7,9 +7,10 @@ zstyle ':vcs_info:*' stagedstr "%F{green}%f"
 zstyle ':vcs_info:*' unstagedstr "%F{red}%f"
 precmd() { vcs_info }
 
+local suspended_jobs="%(1j.[%F{blue}%j%f] .)"
 local current_dir="%F{yellow}%~%f "
 local user_prompt="%B%F{green}%#%f%b "
-PROMPT='${current_dir}${vcs_info_msg_0_}${user_prompt}'
+PROMPT='${current_dir}${vcs_info_msg_0_}${suspended_jobs}${user_prompt}'
 
 function zle-line-init zle-keymap-select {
   local vim_prompt="%K{cyan}%F{white}%B NORMAL %b%f%k"
