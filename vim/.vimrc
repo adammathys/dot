@@ -113,6 +113,19 @@ let g:splice_initial_scrollbind_grid = 1
 "TrailerTrash highlight
 hi UnwantedTrailerTrash guibg=red ctermbg=red
 
+"Fzy file searching.
+function! FzyCommand(choice_command, vim_command)
+  try
+    let output = system(a:choice_command . " | fzy ")
+  catch /Vim:Interrupt/
+    " Swallow errors from ^C, allow redraw! below
+  endtry
+  redraw!
+  if v:shell_error == 0 && !empty(output)
+    exec a:vim_command . ' ' . output
+  endif
+endfunction
+
 " Use space for leader
 map <space> <leader>
 
@@ -137,3 +150,5 @@ map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :Dispatch rspec-fast<CR>
+
+map <leader>e :call FzyCommand('ag . -l -g ""', ":e")<cr>
