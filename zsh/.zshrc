@@ -14,6 +14,9 @@ bindkey -v
 # Find using silver searcher
 f(){ ag --nocolor -g "$1" "${2:-.}" }
 
+# Find and replace using sed and silver!
+replace(){ ag -l --nocolor "$1" "${3:-.}" | xargs sed -i -e "s/$1/$2/g" }
+
 # Refresh tmux after timer commands.
 hcl() {
   =hcl "$@"

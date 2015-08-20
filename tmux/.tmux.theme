@@ -23,13 +23,13 @@ setw -g window-status-attr "none"
 setw -g window-status-activity-attr "none"
 setw -g window-status-separator ""
 
-setw -g window-status-fg "colour10"
+setw -g window-status-fg "colour246"
 setw -g window-status-bg "colour0"
 setw -g window-status-activity-bg "colour0"
-setw -g window-status-activity-fg "colour14"
+setw -g window-status-activity-fg "colour246"
 
 set -g status-left "#[fg=colour15,bg=colour14,bold] #S "
 set -g status-right "#[fg=colour15,bg=colour9,bold]#(hcl_status)#[fg=colour7,bg=colour11,nobold] %Y-%m-%d  %H:%M #[fg=colour15,bg=colour14] #h "
 
-setw -g window-status-format "#[fg=colour10,bg=colour0] #W "
-setw -g window-status-current-format "#[fg=colour7,bg=colour11] #W "
+setw -g window-status-format "#[fg=colour12,bg=colour0] #W "
+setw -g window-status-current-format "#[fg=colour15,bg=colour13] #W "

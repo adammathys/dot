@@ -18,6 +18,7 @@ Plugin 'othree/html5.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'noprompt/vim-yardoc'
+Plugin 'slim-template/vim-slim'
 Plugin 'ap/vim-css-color'
 
 Plugin 'csexton/trailertrash.vim'
@@ -73,9 +74,14 @@ set cmdheight=1           " Only use one line for the command-line.
 set wildmode=list:longest,list:full
 set wildmenu              " Tab completion in command-line.
 
+runtime macros/matchit.vim
+
 syntax enable             " Who doesn't want syntax highlighting?
 set background=dark       " Love me the dark background.
 colorscheme adamized      " Custom solarized!
+
+"Show a little more in explorer
+let g:netrw_liststyle=3
 
 "Airline config
 if !exists('g:airline_symbols')
@@ -150,5 +156,8 @@ map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :Dispatch rspec-fast<CR>
+map <Leader>f :Dispatch rspec --next-failure<CR>
 
 map <leader>e :call FzyCommand('ag . -l -g ""', ":e")<cr>
+map <leader>v :call FzyCommand('ag . -l -g ""', ":vs")<cr>
+map <leader>p :call FzyCommand('ag . -l -g ""', ":sp")<cr>

@@ -14,3 +14,9 @@
 
 # Ignore local omc config
 .omcrc
+
+# Ignore log files
+log/**/*.log*
+
+# Ignore solr crap
+solr/**/*
