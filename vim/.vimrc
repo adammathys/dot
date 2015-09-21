@@ -10,6 +10,8 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'camelcasemotion'
 
+Plugin 'svg.vim'
+
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -79,6 +81,9 @@ runtime macros/matchit.vim
 syntax enable             " Who doesn't want syntax highlighting?
 set background=dark       " Love me the dark background.
 colorscheme adamized      " Custom solarized!
+
+"SVG syntax and formatting
+au BufNewFile,BufRead *.svg setf svg
 
 "Show a little more in explorer
 let g:netrw_liststyle=3
