@@ -163,6 +163,6 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :Dispatch rspec-fast<CR>
 map <Leader>f :Dispatch rspec --next-failure<CR>
 
-map <leader>e :call FzyCommand('ag . -l -g ""', ":e")<cr>
-map <leader>v :call FzyCommand('ag . -l -g ""', ":vs")<cr>
-map <leader>p :call FzyCommand('ag . -l -g ""', ":sp")<cr>
+map <leader>e :call FzyCommand('ag -l -g ""', ":e")<cr>
+map <leader>v :call FzyCommand('ag -l -g ""', ":vs")<cr>
+map <leader>p :call FzyCommand('ag -l -g ""', ":sp")<cr>
