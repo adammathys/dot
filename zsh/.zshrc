@@ -37,6 +37,7 @@ RUBY_GC_MALLOC_LIMIT=80000000
 TERM='screen-256color'
 KEYTIMEOUT=1
 REPORTTIME=10
+GPG_TTY=$(tty)
 
 # Lovely prompt
 source ~/.zsh/prompt.zsh
