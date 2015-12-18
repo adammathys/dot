@@ -114,9 +114,6 @@ let g:gist_open_browser_after_post = 1
 "RSpec + Dispatch!
 let g:rspec_command = 'Dispatch rspec {spec}'
 
-"Dispatch compilers
-let g:dispatch_compilers = { 'rspec-fast' : 'rspec' }
-
 "Splice
 let g:splice_initial_diff_grid = 1
 let g:splice_initial_scrollbind_grid = 1
@@ -160,7 +157,7 @@ noremap <leader>h :s/:\(\w\+\)\s*=>/\1:/g<CR>
 map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :Dispatch rspec-fast<CR>
+map <Leader>a :Dispatch rspec<CR>
 map <Leader>f :Dispatch rspec --next-failure<CR>
 
 map <leader>e :call FzyCommand('ag -l -g ""', ":e")<cr>
