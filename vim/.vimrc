@@ -13,7 +13,8 @@ Plugin 'camelcasemotion'
 Plugin 'svg.vim'
 
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'othree/html5.vim'

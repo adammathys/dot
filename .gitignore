@@ -10,3 +10,5 @@ mpd/.mpd/*
 mpd/.mpdcron/mpdcron.pid
 
 mpd/.ncmpcpp/error.log
+
+gpg/.gnupg

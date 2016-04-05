@@ -9,6 +9,13 @@
   autosetuprebase = always
 [color]
   ui = true
+[color "diff"]
+  meta = yellow
+[color "branch"]
+  current = cyan bold
+  remote = red dim
+[color "status"]
+  untracked = cyan
 [core]
   editor = vim
   excludesfile = ~/.git-ignore
@@ -34,6 +41,7 @@
   autosquash = true
 [user]
   name = Adam Mueller
-  email = adam@freerunningtech.com
+  email = adam@stembolt.com
+  signingkey = 1924F5A7
 [github]
   user = adammathys
