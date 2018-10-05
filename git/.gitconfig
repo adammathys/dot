@@ -25,6 +25,8 @@
   tool = vimdiff
 [difftool]
   prompt = false
+[fetch]
+  prune = true
 [init]
   templatedir = ~/.git-template
 [merge]
@@ -45,3 +47,5 @@
   signingkey = 1924F5A7
 [github]
   user = adammathys
+[rerere]
+  enabled = true

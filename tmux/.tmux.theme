@@ -1,6 +1,5 @@
 set -g status "on"
 set -g status-attr "none"
-set -g status-utf8 "on"
 set -g status-justify "left"
 set -g status-interval 30
 
@@ -9,11 +8,11 @@ set -g status-left-attr "none"
 set -g status-right-length "100"
 set -g status-right-attr "none"
 
-set -g status-bg "colour0"
+set -g status-bg "colour8"
 
-set -g message-fg "colour7"
+set -g message-fg "colour254"
 set -g message-bg "colour11"
-set -g message-command-fg "colour7"
+set -g message-command-fg "colour254"
 set -g message-command-bg "colour11"
 
 set -g pane-border-fg "colour11"
@@ -24,12 +23,12 @@ setw -g window-status-activity-attr "none"
 setw -g window-status-separator ""
 
 setw -g window-status-fg "colour246"
-setw -g window-status-bg "colour0"
-setw -g window-status-activity-bg "colour0"
+setw -g window-status-bg "colour8"
+setw -g window-status-activity-bg "colour8"
 setw -g window-status-activity-fg "colour246"
 
-set -g status-left "#[fg=colour15,bg=colour6,bold] #S "
-set -g status-right "#[fg=colour15,bg=colour9,bold]#(/home/adam/.bin/hcl_status)#[fg=colour7,bg=colour11,nobold] %Y-%m-%d  %H:%M #[fg=colour15,bg=colour6] #h "
+set -g status-left "#[fg=colour254,bg=colour6,bold] #S "
+set -g status-right "#[fg=colour254,bg=colour11,nobold] %Y-%m-%d  %H:%M #[fg=colour254,bg=colour6] #h "
 
-setw -g window-status-format "#[fg=colour12,bg=colour0] #W "
-setw -g window-status-current-format "#[fg=colour15,bg=colour13] #W "
+setw -g window-status-format "#[fg=colour12,bg=colour8] #W "
+setw -g window-status-current-format "#[fg=colour254,bg=colour13] #W "

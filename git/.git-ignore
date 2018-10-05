@@ -1,9 +1,9 @@
 # Ignore silver searcher ignore file.
+.ignore
 .agignore
 
 # Ignore dotenv files.
 .env
-.env.development
 
 # Ignore ruby-version files.
 .ruby-version

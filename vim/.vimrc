@@ -19,6 +19,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'othree/html5.vim'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'noprompt/vim-yardoc'
 Plugin 'slim-template/vim-slim'
@@ -38,9 +40,9 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-dispatch'
 
 Plugin 'thoughtbot/vim-rspec'
-Plugin 'adammathys/vim-dispatch'
 
 call vundle#end()
 filetype plugin indent on
@@ -59,7 +61,7 @@ set backspace=2           " Backspace over indent, end of line and start of inse
 set autoindent            " Yay for auto-indent!
 set smartindent           " Indent smartly.
 
-set clipboard=unnamedplus " Use '+' clipboard.
+set clipboard=unnamed     " Use system clipboard.
 
 set t_Co=256              " More colors!
 
@@ -81,7 +83,7 @@ runtime macros/matchit.vim
 
 syntax enable             " Who doesn't want syntax highlighting?
 set background=dark       " Love me the dark background.
-colorscheme adamized      " Custom solarized!
+colorscheme adamized
 
 "SVG syntax and formatting
 au BufNewFile,BufRead *.svg setf svg
@@ -99,12 +101,12 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 
-let g:airline_symbols.branch = "\uf126"
-let g:airline_symbols.readonly = "\uf023 "
+let g:airline_symbols.branch = ""
+let g:airline_symbols.readonly = "RO"
 let g:airline_symbols.linenr = ""
-let g:airline_symbols.whitespace = "Ξ"
+let g:airline_symbols.whitespace = ""
 
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'base16'
 
 "Gist
 let g:gist_detect_filetype = 1
@@ -152,6 +154,8 @@ map <silent> [q :cp<CR>
 map <silent> <leader>w :w<CR>
 map <silent> <leader>q :q<CR>
 
+map <silent> <leader>b :let &background=(&background == "dark" ? "light" : "dark")<CR>
+
 "Convert Ruby 1.8 hashes to 1.9 syntax
 noremap <leader>h :s/:\(\w\+\)\s*=>/\1:/g<CR>
 
@@ -161,6 +165,6 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :Dispatch rspec<CR>
 map <Leader>f :Dispatch rspec --next-failure<CR>
 
-map <leader>e :call FzyCommand('ag -l -g ""', ":e")<cr>
-map <leader>v :call FzyCommand('ag -l -g ""', ":vs")<cr>
-map <leader>p :call FzyCommand('ag -l -g ""', ":sp")<cr>
+map <leader>e :call FzyCommand('rg --files', ":e")<cr>
+map <leader>v :call FzyCommand('rg --files', ":vs")<cr>
+map <leader>p :call FzyCommand('rg --files', ":sp")<cr>
