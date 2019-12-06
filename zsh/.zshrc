@@ -40,9 +40,4 @@ source ~/.zsh/prompt.zsh
 # No need to type `bundle exec` infront of everything
 source /usr/local/share/bundler-exec/bundler-exec.sh
 
-# Source nvm. (--no-use is so that it's not super slow.)
-# https://github.com/creationix/nvm/issues/539
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
-
 eval "$(direnv hook zsh)"
