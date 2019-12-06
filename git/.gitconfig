@@ -43,8 +43,7 @@
   autosquash = true
 [user]
   name = Adam Mueller
-  email = adam@stembolt.com
-  signingkey = 1924F5A7
+  email = adam.mathys@gmail.com
 [github]
   user = adammathys
 [rerere]
