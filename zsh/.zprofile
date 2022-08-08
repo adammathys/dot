@@ -1,5 +1,5 @@
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+source /opt/homebrew/share/chruby/chruby.sh
+source /opt/homebrew/share/chruby/auto.sh
 
 export EDITOR='vim'
 export VISUAL='vim'
@@ -15,6 +15,7 @@ path=(
   $HOME/.bin
   $HOME/go/bin
   $HOME/.local/bin
+  /opt/homebrew/{bin,sbin}
   /usr/local/{bin,sbin}
   /usr/{bin,sbin}
   /{bin,sbin}
@@ -22,5 +23,3 @@ path=(
 )
 
 source /usr/local/share/bundler-exec/bundler-exec.sh
-
-export PATH="$HOME/.cargo/bin:$PATH"

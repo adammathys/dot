@@ -13,36 +13,28 @@ Plugin 'camelcasemotion'
 Plugin 'svg.vim'
 
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'lifepillar/vim-solarized8'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'othree/html5.vim'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'noprompt/vim-yardoc'
-Plugin 'slim-template/vim-slim'
 Plugin 'ap/vim-css-color'
 
 Plugin 'csexton/trailertrash.vim'
-
-Plugin 'sjl/splice.vim'
-Plugin 'sjl/gundo.vim'
 
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-dispatch'
-
-Plugin 'thoughtbot/vim-rspec'
 
 call vundle#end()
 filetype plugin indent on
@@ -63,8 +55,6 @@ set smartindent           " Indent smartly.
 
 set clipboard=unnamed     " Use system clipboard.
 
-set t_Co=256              " More colors!
-
 set shell=zsh             " Use zsh for `:!` commands.
 
 set nobackup              " No backup files.
@@ -79,11 +69,13 @@ set cmdheight=1           " Only use one line for the command-line.
 set wildmode=list:longest,list:full
 set wildmenu              " Tab completion in command-line.
 
+set tags=tags             " Ctag location
+
 runtime macros/matchit.vim
 
 syntax enable             " Who doesn't want syntax highlighting?
-set background=dark       " Love me the dark background.
-colorscheme adamized
+set t_Co=256              " More colors!
+colorscheme solarized
 
 "SVG syntax and formatting
 au BufNewFile,BufRead *.svg setf svg
@@ -106,16 +98,14 @@ let g:airline_symbols.readonly = "RO"
 let g:airline_symbols.linenr = ""
 let g:airline_symbols.whitespace = ""
 
-let g:airline_theme = 'base16'
+let g:airline_theme = 'solarized'
 
 "Gist
 let g:gist_detect_filetype = 1
 let g:gist_post_private = 1
 let g:gist_show_privates = 1
 let g:gist_open_browser_after_post = 1
-
-"RSpec + Dispatch!
-let g:rspec_command = 'Dispatch rspec {spec}'
+let g:gist_token = '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'
 
 "Splice
 let g:splice_initial_diff_grid = 1
@@ -123,6 +113,22 @@ let g:splice_initial_scrollbind_grid = 1
 
 "TrailerTrash highlight
 hi UnwantedTrailerTrash guibg=red ctermbg=red
+
+"Auto background switching
+function! SetBackgroundMode(...)
+  let g:mode = system("defaults read -g AppleInterfaceStyle")
+  let s:bg = (g:mode ==? "dark\n" ? "dark" : "light")
+  if &background !=? s:bg
+    let &background = s:bg
+  endif
+endfunction
+call SetBackgroundMode()
+
+"Run file using command
+function! RunWith(command)
+  execute "w"
+  execute "!clear;" . a:command . " " . expand("%")
+endfunction
 
 "Fzy file searching.
 function! FzyCommand(choice_command, vim_command)
@@ -137,33 +143,25 @@ function! FzyCommand(choice_command, vim_command)
   endif
 endfunction
 
-" Use space for leader
+"Use space for leader
 map <space> <leader>
-
-map <silent> <leader>g :GundoToggle<CR>
 
 map <silent> <C-M> <C-W>_
 
+map <silent> <leader>. :call SetBackgroundMode()<CR>
 map <silent> <leader>n :silent noh<CR>
 map <silent> <leader>t :TrailerTrim<CR>
-
-map <silent> <leader>c :ccl<CR>
-map <silent> ]q :cn<CR>
-map <silent> [q :cp<CR>
 
 map <silent> <leader>w :w<CR>
 map <silent> <leader>q :q<CR>
 
-map <silent> <leader>b :let &background=(&background == "dark" ? "light" : "dark")<CR>
+map <silent> <leader>c :s#_\(\l\)#\u\1#g<CR>
+
+"Run ruby files
+autocmd FileType ruby nmap <Leader>r :call RunWith("ruby")<cr>
 
 "Convert Ruby 1.8 hashes to 1.9 syntax
 noremap <leader>h :s/:\(\w\+\)\s*=>/\1:/g<CR>
-
-map <Leader>r :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :Dispatch rspec<CR>
-map <Leader>f :Dispatch rspec --next-failure<CR>
 
 map <leader>e :call FzyCommand('rg --files', ":e")<cr>
 map <leader>v :call FzyCommand('rg --files', ":vs")<cr>

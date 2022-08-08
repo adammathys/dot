@@ -1,3 +1,5 @@
+bundler/.bundle/cache
+
 vim/.vim/.netrwhist
 vim/.vim/swap/*
 vim/.vim/bundle/*

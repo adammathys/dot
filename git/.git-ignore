@@ -2,6 +2,10 @@
 .ignore
 .agignore
 
+# Ignore ctag files.
+tags
+*.tags
+
 # Ignore dotenv files.
 .env
 
@@ -26,3 +30,9 @@ solr/**/*
 
 # MacOS files
 .DS_Store
+
+# Ignore random todo files
+todo
+
+# Ignore RSpec temp files
+spec/examples.txt

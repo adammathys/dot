@@ -5,8 +5,12 @@
   st = status --short
   ctags = !.git/hooks/ctags
   fixup = commit --fixup
+  ignore = update-index --skip-worktree
+  notice = update-index --no-skip-worktree
 [branch]
   autosetuprebase = always
+[commit]
+  verbose = true
 [color]
   ui = true
 [color "diff"]
@@ -27,24 +31,33 @@
   prompt = false
 [fetch]
   prune = true
+[format]
+  pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset
 [init]
   templatedir = ~/.git-template
+[log]
+  date = relative
+  decorate = short
 [merge]
-  tool = splice
+  tool = vimdiff
+  conflictstyle = diff3
 [mergetool]
   prompt = false
   keepBackup = false
-[mergetool "splice"]
-  cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
-  trustExitCode = true
 [push]
   default = simple
 [rebase]
   autosquash = true
 [user]
   name = Adam Mueller
-  email = adam.mathys@gmail.com
+  email = adam@super.gd
+  signingkey = A35082E2BFDEFD68
 [github]
   user = adammathys
 [rerere]
   enabled = true
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
