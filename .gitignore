@@ -2,9 +2,9 @@ bundler/.bundle/cache
 
 vim/.vim/.netrwhist
 vim/.vim/swap/*
-vim/.vim/bundle/*
+vim/.vim/autoload/*
+vim/.vim/plugged/*
 !vim/.vim/swap/.gitkeep
-!vim/.vim/bundle/Vundle.vim
 
 mpd/.mpd/*
 !mpd/.mpd/mpd.conf

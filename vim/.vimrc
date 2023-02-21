@@ -1,43 +1,39 @@
 set nocompatible
 set encoding=utf-8
 
-filetype off
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
+Plug 'vim-scripts/camelcasemotion'
+Plug 'vim-scripts/svg.vim'
 
-Plugin 'gmarik/Vundle.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'christoomey/vim-tmux-navigator'
 
-Plugin 'camelcasemotion'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'vim-ruby/vim-ruby'
+Plug 'noprompt/vim-yardoc'
+Plug 'ap/vim-css-color'
 
-Plugin 'svg.vim'
+Plug 'csexton/trailertrash.vim'
 
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'lifepillar/vim-solarized8'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
 
-Plugin 'othree/html5.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'peitalin/vim-jsx-typescript'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'noprompt/vim-yardoc'
-Plugin 'ap/vim-css-color'
-
-Plugin 'csexton/trailertrash.vim'
-
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
-
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-
-call vundle#end()
-filetype plugin indent on
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+call plug#end()
 
 set number                " Show numbers.
 set ruler                 " Show line and column number of cursor position.
@@ -73,7 +69,6 @@ set tags=tags             " Ctag location
 
 runtime macros/matchit.vim
 
-syntax enable             " Who doesn't want syntax highlighting?
 set t_Co=256              " More colors!
 colorscheme solarized
 
