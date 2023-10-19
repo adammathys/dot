@@ -23,7 +23,10 @@ replace(){ rg -l "$1" --color never "${3:-.}" | xargs sed -i -e "s/$1/$2/g" }
 # Aliases
 alias l='ls -lhG'
 alias ll='l -a'
+alias e='exa -l --git'
+alias cat=bat
 alias git=hub
+alias vim=nvim
 
 # Export ALL of the things
 HISTSIZE=100000

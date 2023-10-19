@@ -1,8 +1,8 @@
 source /opt/homebrew/share/chruby/chruby.sh
 source /opt/homebrew/share/chruby/auto.sh
 
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 export PAGER='less'
 
 if [[ -z "$LANG" ]]; then

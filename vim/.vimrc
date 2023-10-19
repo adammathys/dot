@@ -11,10 +11,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-scripts/camelcasemotion'
 Plug 'vim-scripts/svg.vim'
 
-Plug 'altercation/vim-colors-solarized'
-Plug 'lifepillar/vim-solarized8'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'othree/html5.vim'
@@ -65,12 +63,16 @@ set cmdheight=1           " Only use one line for the command-line.
 set wildmode=list:longest,list:full
 set wildmenu              " Tab completion in command-line.
 
+set termguicolors
+
 set tags=tags             " Ctag location
 
 runtime macros/matchit.vim
 
 set t_Co=256              " More colors!
-colorscheme solarized
+
+colorscheme catppuccin_latte
+syntax on
 
 "SVG syntax and formatting
 au BufNewFile,BufRead *.svg setf svg
@@ -93,7 +95,7 @@ let g:airline_symbols.readonly = "RO"
 let g:airline_symbols.linenr = ""
 let g:airline_symbols.whitespace = ""
 
-let g:airline_theme = 'solarized'
+let g:airline_theme = "catppuccin_latte"
 
 "Gist
 let g:gist_detect_filetype = 1
@@ -150,6 +152,7 @@ map <silent> <leader>t :TrailerTrim<CR>
 map <silent> <leader>w :w<CR>
 map <silent> <leader>q :q<CR>
 
+"Convert snakecase to camelcase
 map <silent> <leader>c :s#_\(\l\)#\u\1#g<CR>
 
 "Run ruby files
