@@ -20,4 +20,7 @@ return {
 
   -- Tree-sitter syntax/indent
   require("plugins.treesitter"),
+
+  -- GitHub Copilot
+  require("plugins.copilot"),
 }
