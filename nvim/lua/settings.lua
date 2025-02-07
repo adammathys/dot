@@ -86,3 +86,7 @@ vim.keymap.set('n', '<Leader>t', [[:lua vim.lsp.buf.format()<cr> <bar> :%s/\s\+$
 
 -- Toggle background between light/dark
 vim.keymap.set('n', "<Leader>b", ':exec &bg=="light"? "set bg=dark" : "set bg=light"<CR>', {noremap = true, silent = true})
+
+-- Toggle spell checking
+vim.keymap.set("n", "<leader>se", ":setlocal spell spelllang=en_ca<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>sd", ":setlocal nospell<cr>", { noremap = true })

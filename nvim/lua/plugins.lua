@@ -6,6 +6,9 @@ return {
   require("plugins.catppuccin"),
   require("plugins.lualine"),
 
+  -- Pretty quickfix
+  require("plugins.quickfix"),
+
   -- Camel-case Motion
   require("plugins.spider"),
 
@@ -23,4 +26,7 @@ return {
 
   -- GitHub Copilot
   require("plugins.copilot"),
+
+  -- Key-bindings for merge conflicts
+  require("plugins.git_conflict"),
 }
